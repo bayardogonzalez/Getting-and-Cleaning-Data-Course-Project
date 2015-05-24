@@ -80,3 +80,13 @@ y_databind <- rbind(y_train, y_test)
 ## Here we wan to create data set for subject
 subject_databind <- rbind(subject_train, subject_test)
 
+## Step 2
+## Extract only the measurements on the mean and standard deviation for each measurement
+##--------------------------------------------------------------------------------
+features <- read.table("UCI HAR Dataset/features.txt")
+## We get only columns with mean() or std() in their names
+mean_and_std_features <- grep("-(mean|std)\\(\\)", features[, 2])
+## We then subset the columns we want
+x_databind <- x_databind[, mean_and_std_features]
+## We have to correct the names of the columns
+names(x_databind) <- features[mean_and_std_features, 2]
