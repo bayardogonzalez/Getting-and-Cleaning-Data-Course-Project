@@ -109,16 +109,12 @@ names(y_databind) <- "activity"
 
 ## correct column name
 names(subject_databind) <- "subject"
-
 ## bind all the data in a single data set
 all_databind <- cbind(x_databind, y_databind, subject_databind)
-
 ## Step 5
 ## Create a second, independent tidy data set with the average of each variable
 ## for each activity and each subject
 #--------------------------------------------------------------------------
-
-## 66 <- 68 columns but last two (activity & subject)
 averages_alldata <- ddply(all_databind, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
 write.table(averages_alldata, "c:/Users/gonzalb4/Documents/averages_alldata.txt", row.name=FALSE)
