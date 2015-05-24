@@ -24,7 +24,7 @@ bind the subject x and subject y
 
 library(plyr)
 
-## Step 1
+### Step 1
 ## Merge the training and test sets to create one data set
 ##-------------------------------------------------------------------------------
 x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
