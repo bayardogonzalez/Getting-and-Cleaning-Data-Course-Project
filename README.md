@@ -96,7 +96,6 @@ names(x_databind) <- features[mean_and_std_features, 2]
 ##------------------------------------------------------------------------
 
 activities <- read.table("UCI HAR Dataset/activity_labels.txt")
-
 ## update values with correct activity names
 y_databind[, 1] <- activities[y_databind[, 1], 2]
 
