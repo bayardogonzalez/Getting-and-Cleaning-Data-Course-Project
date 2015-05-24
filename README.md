@@ -61,4 +61,29 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
+So first we have to download the plyr package:
+We then need to download the files that we need
+We then bind the files so that we can work with them:
+bind the x train and x test
+bind the y train and y test
+bind the subject x and subject y
+
+
+library(plyr)
+
+## Step 1
+## Merge the training and test sets to create one data set
+##-------------------------------------------------------------------------------
+x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
+y_train <- read.table("UCI HAR Dataset/train/Y_train.txt")
+subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
+y_test <- read.table("UCI HAR Dataset/test/Y_test.txt")
+subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
+## Here we want to create the data set for X
+x_databind <- rbind(x_train, x_test)
+ ## Here we want to create the data set for y
+y_databind <- rbind(y_train, y_test)
+## Here we wan to create data set for subject
+subject_databind <- rbind(subject_train, subject_test)
 
