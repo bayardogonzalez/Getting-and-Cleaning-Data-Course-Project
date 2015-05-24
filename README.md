@@ -33,7 +33,7 @@ subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
 x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
 y_test <- read.table("UCI HAR Dataset/test/Y_test.txt")
 subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
-## Here we want to create the data set for X
+# Here we want to create the data set for X
 x_databind <- rbind(x_train, x_test)
  ## Here we want to create the data set for y
 y_databind <- rbind(y_train, y_test)
