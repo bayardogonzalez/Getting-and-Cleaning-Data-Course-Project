@@ -62,11 +62,11 @@ y_databind[, 1] <- activities[y_databind[, 1], 2]
 # correct column name
 names(y_databind) <- "activity"
 
-## Step 4
+# Step 4
 ## Appropriately label the data set with descriptive variable names
-#------------------------------------------------------------------
+###----------------------------------------------------------------
 
-# correct column name
+###correct column name 
 names(subject_databind) <- "subject"
 # bind all the data in a single data set
 all_databind <- cbind(x_databind, y_databind, subject_databind)
